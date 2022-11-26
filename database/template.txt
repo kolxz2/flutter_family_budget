@@ -1,0 +1,28 @@
+CREATE TABLE family_members (
+    member_id         INTEGER PRIMARY KEY
+                              UNIQUE
+                              NOT NULL,
+    member_name       TEXT    NOT NULL,
+    member_surname    TEXT,
+    member_patronymic TEXT,
+    _member_birthday  TEXT    NOT NULL
+);
+
+
+CREATE TABLE tag (
+    id    INTEGER PRIMARY KEY
+                  UNIQUE
+                  NOT NULL,
+    title TEXT    NOT NULL
+);
+CREATE TABLE income (
+    id             PRIMARY KEY
+                   UNIQUE
+                   NOT NULL,
+    title  TEXT    NOT NULL
+                   UNIQUE,
+    tag_id INTEGER REFERENCES tag (id) 
+                   NOT NULL
+);
+
+
