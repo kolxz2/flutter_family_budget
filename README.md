@@ -1,16 +1,10 @@
 # flutter_family_budget
 
-A new Flutter project.
+#BLOC
+#repositori 
+#SQLite 
+#WindowsDesctop
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![alt text](https://github.com/kolxz2/flutter_family_budget/blob/master/app_previev/Screenshot_20221202_092450.png?raw=true)
+![alt text](https://github.com/kolxz2/flutter_family_budget/blob/master/app_previev/Screenshot_20221202_092502.png?raw=true)
+![alt text](https://github.com/kolxz2/flutter_family_budget/blob/master/app_previev/Screenshot_20221202_092523.png?raw=true)
