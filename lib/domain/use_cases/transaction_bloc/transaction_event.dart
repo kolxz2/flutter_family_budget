@@ -28,6 +28,8 @@ class AddTransactionEvent extends TransactionEvent {
 
 class LoadTransactionEvent extends TransactionEvent {}
 
+/*class  extends TransactionEvent {}*/
+
 class ShowStatisticEvent extends TransactionEvent {}
 
 class DeleteTransactionEvent extends TransactionEvent {}

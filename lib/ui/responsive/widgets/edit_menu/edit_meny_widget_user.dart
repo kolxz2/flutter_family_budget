@@ -15,7 +15,7 @@ class EditMenuUserWidget extends StatefulWidget {
 }
 
 class _EditMenuUserWidgetState extends State<EditMenuUserWidget> {
-  // late List<String> members = ['Transport', 'Medicine', 'Cherety', 'Food'];
+  late List<String> members = ['Transport', 'Medicine', 'Cherety', 'Food'];
   late List<String> tags = ['Transport', 'Medicine', 'Cherety', 'Food'];
   late List<String> type = ['Transport', 'Medicine', 'Cherety', 'Food'];
   late List<String> wallet = ['Transport', 'Medicine', 'Cherety', 'Food'];
@@ -25,10 +25,18 @@ class _EditMenuUserWidgetState extends State<EditMenuUserWidget> {
   late String _selectedWallet = wallet.first;
   late String _selectedType = type.first;
 
+  String userName = '';
+
   final TextEditingController _enteredCash = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    setState(() {
+      var state = BlocProvider.of<LoginBloc>(context).state;
+      if (state is IsLoginState) {
+        userName = state.name;
+      }
+    });
     return BlocConsumer<TransactionBloc, TransactionState>(
         listener: (context, state) {
       if (state is GetDateForCreatingTransactionState) {
@@ -37,7 +45,6 @@ class _EditMenuUserWidgetState extends State<EditMenuUserWidget> {
           type = state.type;
           wallet = state.wallet;
           _selectedCategory = tags.first;
-          // todo изменить мембера _selectedMember = members.first;
           _selectedType = type.first;
           _selectedWallet = wallet.first;
           final transactionBloc = BlocProvider.of<TransactionBloc>(context);
@@ -52,11 +59,11 @@ class _EditMenuUserWidgetState extends State<EditMenuUserWidget> {
             type = state.type;
             wallet = state.wallet;
             _selectedCategory = tags.first;
-            //todo   _selectedMember = members.first;
+
             _selectedType = type.first;
             _selectedWallet = wallet.first;
-            /*final transactionBloc = BlocProvider.of<TransactionBloc>(context);
-            transactionBloc.add(LoadTransactionEvent());*/
+            final transactionBloc = BlocProvider.of<TransactionBloc>(context);
+            transactionBloc.add(LoadTransactionEvent());
           });
         }
       });

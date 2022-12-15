@@ -7,7 +7,8 @@ import 'package:flutter_family_budget/ui/responsive/widgets/transaction_list/tra
 import '../../widgets/edit_menu/edit_meny_widget_admin.dart';
 import '../../widgets/edit_menu/edit_meny_widget_user.dart';
 import '../../widgets/login_page.dart';
-import '../../widgets/menu/menu_widget.dart';
+import '../../widgets/menu/menu_widget_admin.dart';
+import '../../widgets/menu/menu_widget_user.dart';
 import '../../widgets/transaction_list/transaction_admin_list.dart';
 
 class DesktopAdminScaffoldWidget extends StatelessWidget {
@@ -39,7 +40,7 @@ class DesktopUserScaffoldWidget extends StatelessWidget {
     return Scaffold(
       body: Row(
         children: [
-          Expanded(child: MenuWidget()),
+          Expanded(child: MenuWidgetUser()),
           Expanded(
             child: TransactionListUserWidget(),
             flex: 3,
@@ -65,7 +66,6 @@ class DesktopScreen extends StatelessWidget {
           if (state.isAdmin) {
             final transactionBloc = BlocProvider.of<TransactionBloc>(context);
             transactionBloc.add(GetCategoriesMembersEvent());
-
             Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (context) => const DesktopAdminScaffoldWidget(),
@@ -74,7 +74,6 @@ class DesktopScreen extends StatelessWidget {
           } else {
             final transactionBloc = BlocProvider.of<TransactionBloc>(context);
             transactionBloc.add(GetCategoriesMembersEvent());
-
             Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (context) => const DesktopUserScaffoldWidget(),

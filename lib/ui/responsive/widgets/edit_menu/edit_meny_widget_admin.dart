@@ -28,6 +28,8 @@ class _EditMenuAdminWidgetState extends State<EditMenuAdminWidget> {
 
   @override
   Widget build(BuildContext context) {
+/*    final transactionBloc = BlocProvider.of<TransactionBloc>(context);
+    transactionBloc.add(GetCategoriesMembersEvent());*/
     return BlocConsumer<TransactionBloc, TransactionState>(
         listener: (context, state) {
       if (state is GetDateForCreatingTransactionState) {
@@ -56,8 +58,8 @@ class _EditMenuAdminWidgetState extends State<EditMenuAdminWidget> {
             _selectedMember = members.first;
             _selectedType = type.first;
             _selectedWallet = wallet.first;
-            final transactionBloc = BlocProvider.of<TransactionBloc>(context);
-            transactionBloc.add(LoadTransactionEvent());
+            /*    final transactionBloc = BlocProvider.of<TransactionBloc>(context);
+            transactionBloc.add(LoadTransactionEvent());*/
           });
         }
       });

@@ -55,8 +55,8 @@ class _MenuWidgetState extends State<MenuWidget> {
             leading: const Icon(Icons.analytics_outlined),
             title: const Text("Statistic"),
             onTap: () {
-              /*final transaction = BlocProvider.of<TransactionBloc>(context);
-              transaction.add(ShowStatisticEvent());*/
+              final transaction = BlocProvider.of<TransactionBloc>(context);
+              transaction.add(ShowStatisticEvent());
               Navigator.pop(context);
               Navigator.of(context).push(
                 MaterialPageRoute(

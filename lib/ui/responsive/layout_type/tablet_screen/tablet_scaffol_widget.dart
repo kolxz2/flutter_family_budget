@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../widgets/consts/const_widgets.dart';
 import '../../widgets/edit_menu/edit_meny_widget_admin.dart';
-import '../../widgets/menu/menu_widget.dart';
+import '../../widgets/menu/menu_widget_admin.dart';
 import '../../widgets/transaction_list/transaction_admin_list.dart';
 
 class TabletScaffoldWidget extends StatefulWidget {

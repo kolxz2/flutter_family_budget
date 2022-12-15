@@ -28,6 +28,7 @@ class TransactionBloc extends Bloc<TransactionEvent, TransactionState> {
     on<SearchTransactionEvent>(_searchTransactionEvent);
     on<ShowStatisticEvent>(_showStatisticEvent);
     streamSubscription = loginBloc.stream.listen((logState) async {
+      userName = '';
       if (logState is IsLoginState) {
         if (!logState.isAdmin) {
           userName = logState.name;
